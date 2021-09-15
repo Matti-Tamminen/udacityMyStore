@@ -23,8 +23,8 @@ app.use(express.json())
 
 app.use(express.urlencoded({ extended: true }))
 
-app.get('/', (_req: Request, res: Response) => {
-	res.send('Welcome!')
+app.get('/', (_req: Request, _res: Response) => {
+
 })
 
 // import routes from handlers
