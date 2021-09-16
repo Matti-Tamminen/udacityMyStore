@@ -9,7 +9,8 @@
   "scripts": {
     "build": "npx tsc",
     "jasmine": "jasmine",
-    "test": "npx tsc && jasmine"
+    "test": "npx tsc && jasmine",
+    "start": "npx tsc && node build/src/server"
   },
   "author": "MT",
   "license": "ISC",

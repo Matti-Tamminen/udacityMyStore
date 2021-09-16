@@ -1,3 +1,5 @@
-<section class="container-fluid">
-    <app-list-item *ngFor="let product of productList" [product]="product"></app-list-item>
+<section class="container-fluid mainlistblock">
+    <div class="row row-cols-3 gap-4">
+        <app-list-item *ngFor="let product of productList" [product]="product" class="row"></app-list-item>
+    </div>
 </section>

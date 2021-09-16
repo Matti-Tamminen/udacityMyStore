@@ -1,0 +1,27 @@
+.mainlistblock {
+    border: black 2px solid;
+    padding: 5%;
+    margin: 3%;
+    width: 100%;
+    height: 100%;
+}
+
+.iteminfo {
+    padding-top: 5%;
+}
+
+.itemdesc {
+    font-style: italic;
+}
+
+.itemprice {
+    font-size: 1.2rem;
+    
+    text-align: center;
+}
+
+.itemquan {
+    font-size: 1.2rem;
+    margin-bottom: 5%;
+    text-align: center;
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { DataService } from '../services/data.service';
 
 
 // Productmodel
@@ -6,6 +7,7 @@ export interface Product {
   id: number,
   name: string,
   description: string,
+  url: string,
   price: number,
   quantity: number
 }
@@ -19,39 +21,10 @@ export class ListComponent implements OnInit {
 
   @Input() productList: Product[] = []
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.productList = [
-      {
-        id: 1,
-        name: 'test1',
-        description: 'kuvaus',
-        price: 12.45,
-        quantity: 3
-      },
-      {
-        id: 2,
-        name: 'test2',
-        description: 'kuvaus2',
-        price: 2.45,
-        quantity: 6
-      },
-      {
-        id: 3,
-        name: 'test3',
-        description: 'kuvaus3',
-        price: 123.45,
-        quantity: 2
-      },
-      {
-        id: 4,
-        name: 'test4',
-        description: 'kuvaus4',
-        price: 11112.45,
-        quantity: 32
-      }
-    ]
+    this.productList = this.dataService.getAllProducts()
   }
 
 }

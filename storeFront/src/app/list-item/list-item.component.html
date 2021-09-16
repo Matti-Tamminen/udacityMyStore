@@ -1,6 +1,27 @@
-<div class="col-md-4">
-    <h4>{{ product.name }}</h4>
-    <p>{{ product.description }}</p>
-    <p>{{ product.price }}</p>
-    <p>{{ product.quantity }}</p>
+<div class="container mainlistblock">
+    <a [routerLink]="['/details', product.id]">
+        <div class="row">
+            <img src="{{ product.url }}" alt="{{ product.name }}" />
+        </div>
+    </a>
+    <div class="row iteminfo">
+        <h4>{{ product.name }}</h4>
+        <p class="itemdesc">{{ product.description }}</p>
+        <p class="itemprice"> - {{ product.price }} {{ currencySymbol }} - </p>
+        <select class="itemquan">
+            <option selected>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+        </select>
+    </div>
+    <div class="row">
+        <button class="btn btn-success">Add to cart</button>
+    </div>
 </div>

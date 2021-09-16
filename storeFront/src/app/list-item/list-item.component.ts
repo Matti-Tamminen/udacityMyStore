@@ -8,6 +8,8 @@ import { Product } from '../list/list.component';
 })
 export class ListItemComponent implements OnInit {
 
+  currencySymbol: string
+
   @Input() product: Product
 
   constructor() {
@@ -16,11 +18,14 @@ export class ListItemComponent implements OnInit {
       name: "",
       description: "",
       price: 0,
+      url: "",
       quantity: 0
     }
+    this.currencySymbol = "€"
   }
 
   ngOnInit(): void {
   }
+
 
 }

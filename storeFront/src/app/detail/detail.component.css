@@ -1,0 +1,15 @@
+.maindetailblock {
+    margin-top: 10%;
+}
+
+.detailpic {
+    overflow: hidden;
+    object-fit: contain;
+    box-sizing: content-box !important;
+    max-height: 500px;
+}
+
+.back {
+    position: absolute;
+    bottom: 20% !important;
+}
