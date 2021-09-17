@@ -1,0 +1,46 @@
+.mainblock {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+.itemblock {
+    padding: 5%;
+    margin-bottom: 5%;
+    border: black 1px solid;
+    text-align: center;
+}
+
+.infoblock {
+    text-align: left;
+}
+
+.itempic {
+    overflow: hidden;
+    object-fit: contain;
+    box-sizing: content-box !important;
+    max-height: 200px;
+}
+
+.itemdesc {
+    font-style: italic;
+}
+
+.itemquant {
+    max-width: 105px;
+    float: right;
+}
+
+.removeLink {
+    float: right;
+}
+
+.removeLink:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.formblock {
+    padding: 5%;
+}

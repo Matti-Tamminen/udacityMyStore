@@ -9,6 +9,10 @@ import { DataService } from '../services/data.service';
 })
 export class DetailComponent implements OnInit {
   id: number = parseInt(document.URL.substr(-1))
+  quantity: number = 1
+
+  currencySymbol: string
+
   @Input() product: Product
 
   constructor(private dataService: DataService) {
@@ -20,11 +24,24 @@ export class DetailComponent implements OnInit {
       price: 0,
       quantity: 0
     }
+    this.currencySymbol = '€'
 
   }
 
   ngOnInit(): void {
-    this.product = this.dataService.getOneProduct(this.id)
+    this.dataService.initData().subscribe((res: Product[]) => {
+      this.product = res.find(x => x.id == this.id) as Product
+    })
   }
 
+  setQuantity(event: any) {
+    let nbr = event.target.value
+    this.quantity = parseInt(nbr) as number
+  }
+
+  addItem(id: number) {
+    this.dataService.addToCart(id, this.quantity)
+    console.log(this.quantity);
+
+  }
 }

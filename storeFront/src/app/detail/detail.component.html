@@ -3,16 +3,21 @@
         <div class="col-md-3">
 
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 picblock">
             <img class="detailpic" src="{{ product.url }}" alt="{{ product.name }}" />
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 infoblock">
             <h4>{{ product.name }}</h4>
-            <p>{{ product.description }}</p>
-            <p>{{ product.price }}</p>
-            <button class="btn btn-success">Add to cart</button>
-            <br>
-            <button routerLink="/products" class="btn btn-sm btn-outline-secondary back">Back to products</button>
+            <p class="detaildesc">{{ product.description }}</p>
+            <p>- {{ product.price }} {{ currencySymbol }} -</p>
+            <input type="number" name="quantity" (change)="setQuantity($event)" value="1" min="1" class="detailquant" />
+            <div>
+                <button class="btn btn-success add" (click)="addItem(product.id)">Add to cart</button>
+            </div>
+
+            <div>
+                <button routerLink="/products" class="btn btn-sm btn-outline-secondary back">Back to products</button>
+            </div>
         </div>
         <div class="col-md-3">
 

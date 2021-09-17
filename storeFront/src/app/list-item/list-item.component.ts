@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../list/list.component';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-list-item',
@@ -8,11 +9,12 @@ import { Product } from '../list/list.component';
 })
 export class ListItemComponent implements OnInit {
 
+  quantity: number = 1
   currencySymbol: string
 
   @Input() product: Product
 
-  constructor() {
+  constructor(private dataService: DataService) {
     this.product = {
       id: 0,
       name: "",
@@ -27,5 +29,15 @@ export class ListItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  setQuantity(event: any) {
+    let nbr = event.target.value
+    this.quantity = parseInt(nbr) as number
+  }
+
+  addItem(id: number) {
+    this.dataService.addToCart(id, this.quantity)
+    console.log(this.quantity);
+
+  }
 
 }

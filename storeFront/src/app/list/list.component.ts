@@ -24,7 +24,9 @@ export class ListComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.productList = this.dataService.getAllProducts()
+    this.dataService.initData().subscribe((res: Product[]) => {
+      this.productList = res
+    })
   }
 
 }

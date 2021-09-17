@@ -1,20 +1,20 @@
 import express, { Response, Request } from 'express'
-// import cors, { CorsOptions } from 'cors'
+import cors, { CorsOptions } from 'cors'
 // import { productRoutes } from './handlers/productsHandler'
 // import { customerRoutes } from './handlers/customersHandler'
 // import { userRoutes } from './handlers/usersHandler'
 // import { orderRoutes } from './handlers/ordersHandler'
 
-// const whitelist = ['http://localhost:3000/'] // add your safe domain
-// const corsOptions: CorsOptions = {
-// 	origin: function (origin, callback) {
-// 		if (whitelist.indexOf(origin as string) !== -1 || !origin) {
-// 			callback(null, true)
-// 		} else {
-// 			callback(new Error('Not allowed by CORS'))
-// 		}
-// 	}
-// }
+const whitelist = ['http://localhost:3000', 'http://localhost:4200'] // add your safe domain
+const corsOptions: CorsOptions = {
+	origin: function (origin, callback) {
+		if (whitelist.indexOf(origin as string) !== -1 || !origin) {
+			callback(null, true)
+		} else {
+			callback(new Error('Not allowed by CORS'))
+		}
+	}
+}
 
 const data = [
 	{
@@ -23,7 +23,7 @@ const data = [
 		description: 'You can read it!',
 		price: 9.99,
 		url: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-		quantity: 0
+		quantity: 1
 	},
 	{
 		id: 2,
@@ -31,7 +31,7 @@ const data = [
 		description: 'Listen to stuff!',
 		price: 249.99,
 		url: 'https://images.unsplash.com/photo-1583394838336-acd977736f90?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-		quantity: 0
+		quantity: 1
 	},
 	{
 		id: 3,
@@ -39,7 +39,7 @@ const data = [
 		description: 'Carry things around town!',
 		price: 79.99,
 		url: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-		quantity: 0
+		quantity: 1
 	},
 	{
 		id: 4,
@@ -47,7 +47,7 @@ const data = [
 		description: 'Now you can see!',
 		price: 129.99,
 		url: 'https://images.unsplash.com/photo-1591076482161-42ce6da69f67?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-		quantity: 0
+		quantity: 1
 	},
 	{
 		id: 5,
@@ -55,7 +55,7 @@ const data = [
 		price: 4.99,
 		url: "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
 		description: "Drink anything with it!",
-		quantity: 0
+		quantity: 1
 	},
 	{
 		id: 6,
@@ -63,7 +63,7 @@ const data = [
 		price: 29.99,
 		url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80",
 		description: "Wear it with style!",
-		quantity: 0
+		quantity: 1
 	}
 ]
 
@@ -74,7 +74,7 @@ app.use(express.json())
 
 app.use(express.urlencoded({ extended: true }))
 
-app.get('/', (_req: Request, res: Response) => {
+app.get('/', cors(corsOptions), (_req: Request, res: Response) => {
 	res.send(data)
 })
 

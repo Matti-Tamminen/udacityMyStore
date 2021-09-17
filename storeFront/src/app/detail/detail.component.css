@@ -2,14 +2,37 @@
     margin-top: 10%;
 }
 
+.infoblock {
+    height: 500px;
+    padding: 2%;
+}
+
+.picblock {
+    height: 500px;
+    
+}
+
 .detailpic {
     overflow: hidden;
     object-fit: contain;
     box-sizing: content-box !important;
-    max-height: 500px;
+    height: 500px;
+    border-radius: 5%;
+}
+
+.detaildesc {
+    font-style: italic;
+}
+
+.detailquant {
+    width: 105px;
+}
+
+.add {
+    margin-top: 5%;
 }
 
 .back {
-    position: absolute;
-    bottom: 20% !important;
+    position: fixed;
+    bottom: 200px;
 }
