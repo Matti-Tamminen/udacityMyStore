@@ -10,7 +10,7 @@ import { DataService } from '../services/data.service';
 export class DetailComponent implements OnInit {
   id: number = parseInt(document.URL.substr(-1))
   quantity: number = 1
-
+  show: boolean = false
   currencySymbol: string
 
   @Input() product: Product
@@ -24,7 +24,7 @@ export class DetailComponent implements OnInit {
       price: 0,
       quantity: 0
     }
-    this.currencySymbol = '€'
+    this.currencySymbol = dataService.setCurrency()
 
   }
 
@@ -41,7 +41,7 @@ export class DetailComponent implements OnInit {
 
   addItem(id: number) {
     this.dataService.addToCart(id, this.quantity)
-    console.log(this.quantity);
+    this.show = true
 
   }
 }

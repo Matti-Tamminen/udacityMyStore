@@ -18,29 +18,51 @@
         </div>
     </div>
     <div class="col">
-        <form>
+        <form #form="ngForm" (ngSubmit)="onSubmit($event)">
             <div class="form-group">
                 <label for="first">Firstname: </label>
-                <input type="text" name="first" class="form-control" />
+                <input type="text" #first="ngModel" name="first" class="form-control" required
+                    [(ngModel)]="header.firstName" />
             </div>
             <br>
             <div class="form-group">
                 <label for="last">Lastname: </label>
-                <input type="text" name="last" class="form-control" />
+                <input type="text" #last="ngModel" name="last" class="form-control" required
+                    [(ngModel)]="header.lastName" />
             </div>
             <br>
             <div class="form-group">
                 <label for="address">Address: </label>
-                <input type="text" name="address" class="form-control" />
+                <input type="text" #address="ngModel" name="address" class="form-control" required
+                    [(ngModel)]="header.address" />
             </div>
             <br>
             <div class="form-group">
                 <label for="card">Creditcard number: </label>
-                <input type="number" name="card" class="form-control" />
+                <input type="text" #card="ngModel" name="card" class="form-control" required minlength="16"
+                    pattern="[0-9]*" [(ngModel)]="header.card" />
             </div>
             <br>
-            <button type="submit" class="btn btn-primary">Send Order</button>
+            <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Send Order</button>
         </form>
+        <div *ngIf="form.invalid">
+            <br>
+            <div *ngIf="first.errors?.required" class="alert alert-danger">
+                Please provide your first name.
+            </div>
+            <div *ngIf="last.errors?.required" class="alert alert-danger">
+                Please provide your last name.
+            </div>
+            <div *ngIf="address.errors?.required" class="alert alert-danger">
+                Please provide your address.
+            </div>
+            <div *ngIf="card.errors?.minlength" class="alert alert-danger">
+                Please provide a valid 16 character creditcard number.
+            </div>
+            <div *ngIf="card.errors?.pattern" class="alert alert-danger">
+                Please check your creditcard number format.
+            </div>
+        </div>
         <br>
     </div>
     <div class="container">

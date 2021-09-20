@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from '../services/data.service';
 
 
+
 // Productmodel
 export interface Product {
   id: number,

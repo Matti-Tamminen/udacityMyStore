@@ -11,6 +11,7 @@ export class ListItemComponent implements OnInit {
 
   quantity: number = 1
   currencySymbol: string
+  show: boolean = false
 
   @Input() product: Product
 
@@ -23,21 +24,20 @@ export class ListItemComponent implements OnInit {
       url: "",
       quantity: 0
     }
-    this.currencySymbol = "€"
+    this.currencySymbol = dataService.setCurrency()
   }
 
   ngOnInit(): void {
   }
 
-  setQuantity(event: any) {
+  setQuantity(event: any): void {
     let nbr = event.target.value
     this.quantity = parseInt(nbr) as number
   }
 
-  addItem(id: number) {
+  addItem(id: number): void {
     this.dataService.addToCart(id, this.quantity)
-    console.log(this.quantity);
-
+    this.show = true
   }
 
 }

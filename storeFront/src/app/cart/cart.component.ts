@@ -1,10 +1,16 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../list/list.component';
 import { DataService } from '../services/data.service';
-
+import { Router } from '@angular/router';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
-
+export interface OrderHeader {
+  id: number,
+  firstName: string,
+  lastName: string,
+  address: string,
+  card: string
+}
 
 @Component({
   selector: 'app-cart',
@@ -14,13 +20,15 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 export class CartComponent implements OnInit {
   XIcon = faTrash;
   currencySymbol: string
+  header: OrderHeader
+  pattern: string | RegExp = ""
 
   @Input() cart: Product[] = []
   product: Product
 
   total: string = "0"
 
-  constructor(private dataService: DataService) {
+  constructor(private dataService: DataService, private router: Router) {
     this.product = {
       id: 0,
       name: "",
@@ -29,7 +37,14 @@ export class CartComponent implements OnInit {
       url: "",
       quantity: 1
     }
-    this.currencySymbol = "€"
+    this.header = {
+      id: 0,
+      firstName: "",
+      lastName: "",
+      address: "",
+      card: ""
+    }
+    this.currencySymbol = dataService.setCurrency()
   }
 
   ngOnInit(): void {
@@ -38,7 +53,8 @@ export class CartComponent implements OnInit {
   }
 
   removeItem(id: number) {
-    this.cart = this.cart.filter(x => x.id != id)
+    var index = this.cart.findIndex(x => x.id == id)
+    this.cart.splice(index, 1)
     this.updateTotal()
   }
 
@@ -53,6 +69,23 @@ export class CartComponent implements OnInit {
     var obj = this.cart.find(x => x.id == id) as Product
     obj.quantity = nbr
     this.updateTotal()
+  }
+
+  onSubmit(event: any) {
+    event.preventDefault()
+    var newOrder = {
+      id: parseInt(new Date().toDateString()),
+      firstName: this.header.firstName,
+      lastName: this.header.lastName,
+      address: this.header.address,
+      card: this.header.card,
+      date: new Date(),
+      total: this.total,
+      rows: this.cart
+    }
+    this.dataService.order = newOrder
+    this.router.navigate(['/order']);
+
   }
 
 }

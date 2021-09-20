@@ -10,6 +10,8 @@ import { CartComponent } from './cart/cart.component';
 import { ListItemComponent } from './list-item/list-item.component';
 import { DetailComponent } from './detail/detail.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormsModule } from '@angular/forms';
+import { OrderComponent } from './order/order.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +19,16 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ListComponent,
     CartComponent,
     ListItemComponent,
-    DetailComponent
+    DetailComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -14,10 +14,14 @@
             <div>
                 <button class="btn btn-success add" (click)="addItem(product.id)">Add to cart</button>
             </div>
-
             <div>
                 <button routerLink="/products" class="btn btn-sm btn-outline-secondary back">Back to products</button>
             </div>
+            <br>
+            <br>
+            <ngb-toast *ngIf="show" (hidden)="this.show = false" class="bg-success text-light" [delay]="2000">
+                <strong>{{ product.name }}</strong> added to cart!
+            </ngb-toast>
         </div>
         <div class="col-md-3">
 

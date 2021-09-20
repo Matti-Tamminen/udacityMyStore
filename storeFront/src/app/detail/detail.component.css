@@ -33,6 +33,5 @@
 }
 
 .back {
-    position: fixed;
-    bottom: 200px;
+    margin-top: 5%;
 }

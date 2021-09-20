@@ -23,5 +23,10 @@
         <div>
             <button class="btn btn-success" (click)="addItem(product.id)">Add to cart</button>
         </div>
+        <br>
+        <ngb-toast *ngIf="show" (hidden)="this.show = false" class="bg-success text-light w-100 infoblock"
+            [delay]="2000">
+            <strong>{{ product.name }}</strong> added to cart!
+        </ngb-toast>
     </div>
 </div>
