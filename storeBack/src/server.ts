@@ -1,11 +1,7 @@
 import express, { Response, Request } from 'express'
 import cors, { CorsOptions } from 'cors'
-// import { productRoutes } from './handlers/productsHandler'
-// import { customerRoutes } from './handlers/customersHandler'
-// import { userRoutes } from './handlers/usersHandler'
-// import { orderRoutes } from './handlers/ordersHandler'
 
-const whitelist = ['http://localhost:3000', 'http://localhost:4200'] // add your safe domain
+const whitelist = ['http://localhost:3000', 'http://localhost:4200', 'http://localhost:9876'] // add your safe domain
 const corsOptions: CorsOptions = {
 	origin: function (origin, callback) {
 		if (whitelist.indexOf(origin as string) !== -1 || !origin) {
@@ -51,18 +47,18 @@ const data = [
 	},
 	{
 		id: 5,
-		name: "Cup",
+		name: 'Cup',
 		price: 4.99,
-		url: "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-		description: "Drink anything with it!",
+		url: 'https://images.unsplash.com/photo-1517256064527-09c73fc73e38?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+		description: 'Drink anything with it!',
 		quantity: 1
 	},
 	{
 		id: 6,
-		name: "Shirt",
+		name: 'Shirt',
 		price: 29.99,
-		url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80",
-		description: "Wear it with style!",
+		url: 'https://images.unsplash.com/photo-1581655353564-df123a1eb820?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80',
+		description: 'Wear it with style!',
 		quantity: 1
 	}
 ]
@@ -77,12 +73,6 @@ app.use(express.urlencoded({ extended: true }))
 app.get('/', cors(corsOptions), (_req: Request, res: Response) => {
 	res.send(data)
 })
-
-// import routes from handlers
-// productRoutes(app)
-// customerRoutes(app)
-// userRoutes(app)
-// orderRoutes(app)
 
 app.listen(port, () => {
 	console.log(`Server listening on port: ${port}`)

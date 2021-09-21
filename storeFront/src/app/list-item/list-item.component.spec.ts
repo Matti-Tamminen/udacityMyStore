@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ListItemComponent } from './list-item.component';
+import { AppModule } from '../app.module';
 
 describe('ListItemComponent', () => {
   let component: ListItemComponent;
@@ -8,9 +9,12 @@ describe('ListItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListItemComponent ]
+      imports: [
+        AppModule
+      ],
+      declarations: [ListItemComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -22,4 +26,19 @@ describe('ListItemComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should contain initialized variables', () => {
+    const product = {
+      id: 0,
+      name: "",
+      description: "",
+      price: 0,
+      url: "",
+      quantity: 0
+    }
+
+    expect(component.show).toEqual(false)
+    expect(component.quantity).toEqual(1)
+    expect(component.product).toEqual(product)
+  })
 });

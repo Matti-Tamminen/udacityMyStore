@@ -4,8 +4,10 @@ import { ListComponent } from './list/list.component';
 import { CartComponent } from './cart/cart.component';
 import { DetailComponent } from './detail/detail.component';
 import { OrderComponent } from './order/order.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent },
   { path: 'products', component: ListComponent },
   { path: 'cart', component: CartComponent },
   { path: 'details/:id', component: DetailComponent },

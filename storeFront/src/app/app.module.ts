@@ -12,6 +12,7 @@ import { DetailComponent } from './detail/detail.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
 import { OrderComponent } from './order/order.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { OrderComponent } from './order/order.component';
     CartComponent,
     ListItemComponent,
     DetailComponent,
-    OrderComponent
+    OrderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

@@ -65,7 +65,10 @@ export class CartComponent implements OnInit {
   }
 
   setQuantity(event: any, id: number) {
-    let nbr = event.target.value
+    let nbr: number = event.target.value
+    if (nbr < 1) {
+      nbr = 1
+    }
     var obj = this.cart.find(x => x.id == id) as Product
     obj.quantity = nbr
     this.updateTotal()

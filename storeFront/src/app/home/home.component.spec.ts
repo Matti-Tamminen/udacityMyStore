@@ -1,24 +1,24 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListComponent } from './list.component';
+import { HomeComponent } from './home.component';
 import { AppModule } from '../app.module';
 
-describe('ListComponent', () => {
-  let component: ListComponent;
-  let fixture: ComponentFixture<ListComponent>;
+describe('HomeComponent', () => {
+  let component: HomeComponent;
+  let fixture: ComponentFixture<HomeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
         AppModule
       ],
-      declarations: [ListComponent]
+      declarations: [HomeComponent]
     })
       .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListComponent);
+    fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -27,7 +27,8 @@ describe('ListComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should contain list variable', () => {
-    expect(component.productList).toEqual([])
+  it('should contain html elements', () => {
+    const sec = fixture.nativeElement.querySelector('section')
+    expect(sec).toHaveClass('homeblock')
   })
 });
