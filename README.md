@@ -4,8 +4,8 @@ Course app to imitate basic netstore functionality. Contains separate frontend a
 ## Init
 
 1. npm i (storeFront)
-2. frontend tests: /storeFront: <ng test>
-3. frontend server up: /storeFront: <ng serve> (http://localhost:4200)
+2. frontend tests: /storeFront: 'ng test'
+3. frontend server up: /storeFront: 'ng serve' (http://localhost:4200)
 
 ## Data
 
