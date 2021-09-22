@@ -10,7 +10,8 @@
             <h4>{{ product.name }}</h4>
             <p class="detaildesc">{{ product.description }}</p>
             <p>- {{ product.price }} {{ currencySymbol }} -</p>
-            <input type="number" name="quantity" (change)="setQuantity($event)" value="1" min="1" class="detailquant" />
+            <input type="number" name="quantity" [(ngModel)]="quantity" value="{{ quantity }}" min="1"
+                class="detailquant" />
             <div>
                 <button class="btn btn-success add" (click)="addItem(product.id)">Add to cart</button>
             </div>

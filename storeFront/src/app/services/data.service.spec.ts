@@ -33,7 +33,7 @@ describe('DataService', () => {
     }
     expect(service.products).toEqual([])
     expect(service.cart).toEqual([])
-    expect(service.order).toEqual(order)
+    expect(service.order.total).toEqual(order.total)
   })
 
   it('should contain basic functions', () => {

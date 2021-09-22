@@ -34,10 +34,9 @@ export class DetailComponent implements OnInit {
     })
   }
 
-  setQuantity(event: any) {
-    let nbr = event.target.value
-    this.quantity = parseInt(nbr) as number
-  }
+  // setQuantity(val: number) {
+  //   this.quantity = val
+  // }
 
   addItem(id: number) {
     this.dataService.addToCart(id, this.quantity)

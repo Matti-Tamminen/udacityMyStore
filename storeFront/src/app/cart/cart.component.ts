@@ -64,13 +64,12 @@ export class CartComponent implements OnInit {
     this.total = (Math.round(newTotal * 100) / 100).toFixed(2)
   }
 
-  setQuantity(event: any, id: number) {
-    let nbr: number = event.target.value
-    if (nbr < 1) {
-      nbr = 1
+  setQuantity(val: number, id: number) {
+    if (val < 1) {
+      val = 1
     }
     var obj = this.cart.find(x => x.id == id) as Product
-    obj.quantity = nbr
+    obj.quantity = val
     this.updateTotal()
   }
 

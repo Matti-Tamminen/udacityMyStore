@@ -62,7 +62,7 @@ export class DataService {
   }
 
   initData(): Observable<[]> {
-    return this.http.get<[]>('http://localhost:3000/')
+    return this.http.get<[]>('./assets/data.json')
   }
 
   setCurrency(): string {

@@ -30,11 +30,6 @@ export class ListItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  setQuantity(event: any): void {
-    let nbr = event.target.value
-    this.quantity = parseInt(nbr) as number
-  }
-
   addItem(id: number): void {
     this.dataService.addToCart(id, this.quantity)
     this.show = true
