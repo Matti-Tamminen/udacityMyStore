@@ -2,18 +2,18 @@
   "name": "storeback",
   "version": "1.0.0",
   "description": "MyStore backend",
-  "main": "server.js",
+  "main": "build/src/server.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
     "lint": "npx eslint --fix",
-    "build": "npx tsc && npx db-migrate up",
+    "build": "npx tsc",
     "migrate": "npx db-migrate up",
     "jasmine": "jasmine",
     "test": "npx tsc && jasmine",
     "watch": "tsc-watch --noClear -p ./tsconfig.json --onSuccess \"node ./build/src/server.js\"",
-    "start": "npx tsc && node build/src/server"
+    "start": "node ."
   },
   "author": "MT",
   "license": "ISC",
