@@ -62,7 +62,7 @@ export class DataService {
   }
 
   initData(): Observable<[]> {
-    return this.http.get<[]>('./assets/data.json')
+    return this.http.get<[]>('http://storeapi-env.eba-ub3a4zsk.eu-north-1.elasticbeanstalk.com/products')
   }
 
   setCurrency(): string {
