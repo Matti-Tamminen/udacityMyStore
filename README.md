@@ -24,17 +24,30 @@ Course app to imitate basic netstore functionality. Contains separate frontend a
 5. PORT=3000
 
 * For hosting, run 'eb init' and create .ebextensions/options.config for:
-* (option_settings:
-    aws:elasticbeanstalk:application:environment:
-        NodeCommand: "npm start"
-        POSTGRES_USER: ''
-        POSTGRES_PASSWORD: ''
-        POSTGRES_HOST: ''
-        POSTGRES_DB: ''
-        PORT: ''>)
+    option_settings:
+        aws:elasticbeanstalk:application:environment:
+            NodeCommand: "npm start"
+            POSTGRES_USER: ''
+            POSTGRES_PASSWORD: ''
+            POSTGRES_HOST: ''
+            POSTGRES_DB: ''
+            PORT: ''
 
 ## Testing
 
 * Backend has nothing meaningfull to test so testing is focused on the front (atm).
 * Currency localisation is not ready, so magic strings are tested for currency.
 
+## Documentation
+
+* Documentation directory contains:
+1. Architecture chart.
+2. Deployment pipeline.
+3. Dependencies overview.
+
+* Screenshots directory contains:
+1. RDS database screenshot from general status and basic conf.
+2. S3 bucket screenshot from general status and basic conf.
+3. Elastic Beanstalk screenshot from general status (updated node) and configurements (env variables etc.).
+4. Terminal screenshots succesfull run of the eb-cli and aws-cli.
+5. CircleCi screenshot.
