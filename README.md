@@ -24,14 +24,14 @@ Course app to imitate basic netstore functionality. Contains separate frontend a
 5. PORT=3000
 
 * For hosting, run 'eb init' and create .ebextensions/options.config for:
-<option_settings:
+* (option_settings:
     aws:elasticbeanstalk:application:environment:
         NodeCommand: "npm start"
         POSTGRES_USER: ''
         POSTGRES_PASSWORD: ''
         POSTGRES_HOST: ''
         POSTGRES_DB: ''
-        PORT: ''>
+        PORT: ''>)
 
 ## Testing
 
