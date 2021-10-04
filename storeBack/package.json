@@ -13,7 +13,8 @@
     "jasmine": "jasmine",
     "test": "npx tsc && jasmine",
     "watch": "tsc-watch --noClear -p ./tsconfig.json --onSuccess \"node ./build/src/server.js\"",
-    "start": "node ."
+    "start": "node .",
+    "deploy": "eb deploy"
   },
   "author": "MT",
   "license": "ISC",

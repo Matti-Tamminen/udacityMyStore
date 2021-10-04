@@ -1,0 +1,11 @@
+{
+    "scripts": {
+        "frontend:install": "cd storeFront && npm i",
+        "backend:install": "cd storeBack && npm i",
+        "frontend:build": "cd storeFront && npm run build",
+        "backend:build": "cd storeBack && npm run build",
+        "frontend:deploy": "cd storeFront && npm run deploy",
+        "backend:deploy": "cd storeBack && npm run deploy",
+        "frontend:test": "cd storeFront && npm run test"
+    }
+}

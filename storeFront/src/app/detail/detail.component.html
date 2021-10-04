@@ -9,7 +9,7 @@
         <div class="col-md-3 infoblock">
             <h4>{{ product.name }}</h4>
             <p class="detaildesc">{{ product.description }}</p>
-            <p>- {{ product.price }} -</p>
+            <p>- {{ product.price }} {{ currencySymbol }} -</p>
             <input type="number" name="quantity" [(ngModel)]="quantity" value="{{ quantity }}" min="1"
                 class="detailquant" />
             <div>

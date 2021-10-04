@@ -10,7 +10,7 @@
                 </i>
                 <h4>{{ product.name }}</h4>
                 <p class="itemdesc">{{ product.description }}</p>
-                <p>- {{ product.price }} -</p>
+                <p>- {{ product.price }} {{ currencySymbol }}-</p>
                 <label for="quantity">Amount: </label>
                 <input type="number" name="quantity" [(ngModel)]="product.quantity"
                     (ngModelChange)="setQuantity($event, product.id)" value="{{ product.quantity }}" min="1"

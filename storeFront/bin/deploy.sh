@@ -1,0 +1,1 @@
+aws s3 cp --recursive --acl public-read ./dist/storeFront s3://storefront-s3-bucket/

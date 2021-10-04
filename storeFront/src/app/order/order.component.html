@@ -1,7 +1,7 @@
 <section class="orderblock">
     <div *ngIf="order.total != '0.00' && order.card !=''; else invalid">
         <h2 class="alert alert-success">Success!</h2>
-        <p>Your order of - {{ order.total }} - is completed.</p>
+        <p>Your order of - {{ order.total }} {{ currencySymbol }} - is completed.</p>
         <p>Order will be shipped to <strong>{{ order.address }}</strong> within 6-7 years.</p>
         <p>Thank you for shopping at #MyStore!</p>
         <br>
