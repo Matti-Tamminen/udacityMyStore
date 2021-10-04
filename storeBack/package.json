@@ -7,14 +7,14 @@
     "test": "tests"
   },
   "scripts": {
-    "lint": "npx eslint --fix",
-    "build": "npx tsc",
-    "migrate": "npx db-migrate up",
+    "lint": "eslint --fix",
+    "build": "tsc",
+    "migrate": "db-migrate up",
     "jasmine": "jasmine",
-    "test": "npx tsc && jasmine",
+    "test": "tsc && jasmine",
     "watch": "tsc-watch --noClear -p ./tsconfig.json --onSuccess \"node ./build/src/server.js\"",
     "start": "node .",
-    "deploy": "eb deploy"
+    "deploy": "eb deploy --profile default"
   },
   "author": "MT",
   "license": "ISC",
