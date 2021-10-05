@@ -6,7 +6,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: "cimg/node:16.10-browsers, current-browsers"
+      - image: "cimg/16.10.0-browsers"
     environment:
       - CHROME_BIN: /usr/bin/google-chrome
     steps:
