@@ -7,6 +7,8 @@ jobs:
   build:
     docker:
       - image: "cimg/base:stable"
+    environment:
+      - CHROME_BIN: /usr/lib/chromium/chrome
     steps:
       - node/install
       - checkout
