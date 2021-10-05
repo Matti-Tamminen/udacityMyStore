@@ -3,5 +3,4 @@ node_modules/
 build/
 database.json
 # Elastic Beanstalk Files
-
 .ebextensions/*
