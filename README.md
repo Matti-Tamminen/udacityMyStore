@@ -8,7 +8,7 @@ Course app to imitate basic netstore functionality. Contains separate frontend a
 ## Init
 
 1. npm i (storeBack)
-2. npm local server up: /storeBack: 'npm run watch'
+2. npm local server up: /storeBack: 'npm run watch' (http://localhost:5432)
 3. npm i (storeFront)
 4. frontend tests: /storeFront: 'ng test'
 5. frontend local server up: /storeFront: 'ng serve' (http://localhost:4200)
@@ -21,7 +21,7 @@ Course app to imitate basic netstore functionality. Contains separate frontend a
 2. POSTGRES_PASSWORD=''
 3. POSTGRES_HOST=''
 4. POSTGRES_DB=''
-5. PORT=3000
+5. PORT=5432
 
 * For hosting, run 'eb init' and create .ebextensions/options.config for:
     option_settings:
@@ -50,4 +50,4 @@ Course app to imitate basic netstore functionality. Contains separate frontend a
 2. S3 bucket screenshot from general status and basic conf.
 3. Elastic Beanstalk screenshot from general status (updated node) and configurements (env variables etc.).
 4. Terminal screenshots succesfull run of the eb-cli and aws-cli.
-5. CircleCi screenshot.
+5. CircleCi screenshot for deployment and env.
