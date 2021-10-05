@@ -1,17 +1,16 @@
 version: 2.1
 orbs:
-  node: circleci/node@4.7.0
+  #node: circleci/node@4.7.0
   aws-cli: circleci/aws-cli@1.3.1
   eb: circleci/aws-elastic-beanstalk@2.0.1
 jobs:
   build:
     docker:
-      - image: "cimg/base:stable"
-      - node-image: "cimg/node:14.17.6-browsers"
+      - image: "cimg/node:14.17.6-browsers"
     environment:
       - CHROME_BIN: /usr/bin/google-chrome
     steps:
-      - node/install
+      #node/install
       - checkout
       - aws-cli/setup
       - checkout
