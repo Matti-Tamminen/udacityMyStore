@@ -6,9 +6,9 @@ orbs:
 jobs:
   build:
     docker:
-      - image: "cimg/14.18.0-browsers"
+      - image: "cimg/14.17.6-browsers"
     environment:
-      - CHROME_BIN: /usr/bin/google-chrome
+      - CHROME_BIN: /usr/bin/google-chrome karma start --single-run
     steps:
       - node/install
       - checkout
