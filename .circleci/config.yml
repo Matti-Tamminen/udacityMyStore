@@ -16,9 +16,6 @@ jobs:
       - checkout
       - eb/setup
       - run:
-          command: |
-            bash which google-chrome
-      - run:
           name: Front-End Install
           command: |
             npm run frontend:install
