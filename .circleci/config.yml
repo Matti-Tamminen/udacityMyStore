@@ -8,11 +8,11 @@ jobs:
     docker:
       - image: "cimg/base:stable"
     steps:
-      - node/install:
-      - checkout:
-      - aws-cli/setup:
-      - checkout:
-      - eb/setup:
+      - node/install
+      - checkout
+      - aws-cli/setup
+      - checkout
+      - eb/setup
       - run:
           name: Front-End Install
           command: |
