@@ -6,7 +6,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: "cimg/base-browsers"
+      - image: "cimg/base"
     environment:
       - CHROME_BIN: /usr/bin/google-chrome karma start --single-run
     steps:
