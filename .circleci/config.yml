@@ -7,8 +7,9 @@ jobs:
   build:
     docker:
       - image: "cimg/base:stable"
+      - node-image: "cimg/node:14.17.6-browsers"
     environment:
-      - CHROME_BIN: /usr/bin/google-chrome karma start --single-run
+      - CHROME_BIN: /usr/bin/google-chrome
     steps:
       - node/install
       - checkout
