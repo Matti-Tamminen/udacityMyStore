@@ -14,7 +14,7 @@
     "test": "tsc && jasmine",
     "watch": "tsc-watch --noClear -p ./tsconfig.json --onSuccess \"node ./build/src/server.js\"",
     "start": "node .",
-    "deploy": "default eb deploy storeAPI-env"
+    "deploy": "eb use storeAPI-env --profile default && eb deploy --profile default"
   },
   "author": "MT",
   "license": "ISC",
