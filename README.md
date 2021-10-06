@@ -22,6 +22,12 @@ Course app to imitate basic netstore functionality. Contains separate frontend a
 3. POSTGRES_HOST=''
 4. POSTGRES_DB=''
 5. PORT=5432
+6. AWS_REGION=''
+7. AWS_PROFILE=''
+8. AWS_BUCKET=''
+9. AWS_ACCESS_KEY_ID=''
+10. AWS_SECRET_ACCESS_KEY=''
+11. NodeCommand="npm start"
 
 * For hosting, run 'eb init' and create .ebextensions/options.config for:
     option_settings:
@@ -41,9 +47,11 @@ Course app to imitate basic netstore functionality. Contains separate frontend a
 ## Documentation
 
 * Documentation directory contains:
-1. Architecture chart.
-2. Deployment pipeline.
-3. Dependencies overview.
+1. Architecture chart (both transparent and greybackground).
+2. Architecture overview as detailed information.
+3. Deployment chart.
+4. Deployment pipeline as detailed information.
+5. Dependencies overview.
 
 * Screenshots directory contains:
 1. RDS database screenshot from general status and basic conf.

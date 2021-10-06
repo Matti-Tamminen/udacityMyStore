@@ -5,6 +5,9 @@ orbs:
   browser-tools: circleci/browser-tools@1.2.2
 jobs:
   build:
+    filters:
+      branches:
+        only: master
     docker:
       - image: "cimg/node:14.17.6-browsers"
     environment:
