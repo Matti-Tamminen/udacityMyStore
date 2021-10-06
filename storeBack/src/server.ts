@@ -1,4 +1,5 @@
 import express, { Response, Request } from 'express'
+import { config } from './config/config'
 // import cors from 'cors'
 import { productRoutes } from './handlers/productsHandler'
 
@@ -14,7 +15,7 @@ import { productRoutes } from './handlers/productsHandler'
 // }
 
 const app = express()
-const port = 5432
+const port = config.port | 5432
 
 app.use(express.json())
 // app.use(cors())
