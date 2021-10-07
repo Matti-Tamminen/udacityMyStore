@@ -7,7 +7,7 @@ dotenv.config()
 // const {
 // 	POSTGRES_HOST,
 // 	POSTGRES_DB,
-// 	POSTGRES_USER,
+// 	POSTGRES_USERNAME,
 // 	POSTGRES_PASSWORD,
 // 	PORT
 // } = process.env
@@ -18,7 +18,7 @@ dotenv.config()
 // 	client = new Pool({
 // 		host: POSTGRES_HOST,
 // 		database: POSTGRES_DB_TEST,
-// 		user: POSTGRES_USER,
+// 		user: POSTGRES_USERNAME,
 // 		password: POSTGRES_PASSWORD,
 // 		port: PORT as number | undefined
 // 	})
@@ -27,7 +27,7 @@ dotenv.config()
 // 	client = new Pool({
 // 		host: POSTGRES_HOST,
 // 		database: POSTGRES_DB,
-// 		user: POSTGRES_USER,
+// 		user: POSTGRES_USERNAME,
 // 		password: POSTGRES_PASSWORD,
 // 		port: PORT as number | undefined
 // 	})
@@ -36,7 +36,7 @@ dotenv.config()
 // 	client = new Pool({
 // 		host: POSTGRES_HOST,
 // 		database: POSTGRES_DB,
-// 		user: POSTGRES_USER,
+// 		user: POSTGRES_USERNAME,
 // 		password: POSTGRES_PASSWORD,
 // 		port: PORT as number | undefined
 // 	})
