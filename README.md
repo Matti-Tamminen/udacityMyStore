@@ -17,7 +17,7 @@ Course app to imitate basic netstore functionality. Contains separate frontend a
 
 * Data is supplied from Postgres db.
 * For local development, create .env to storeBack/ with:
-1. POSTGRES_USER=''
+1. POSTGRES_USERNAME=''
 2. POSTGRES_PASSWORD=''
 3. POSTGRES_HOST=''
 4. POSTGRES_DB=''
@@ -33,7 +33,7 @@ Course app to imitate basic netstore functionality. Contains separate frontend a
     option_settings:
         aws:elasticbeanstalk:application:environment:
             NodeCommand: "npm start"
-            POSTGRES_USER: ''
+            POSTGRES_USERNAME: ''
             POSTGRES_PASSWORD: ''
             POSTGRES_HOST: ''
             POSTGRES_DB: ''

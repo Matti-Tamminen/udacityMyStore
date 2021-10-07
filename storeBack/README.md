@@ -23,7 +23,7 @@ This project was created with Node.js version 16.9.1
 * option_settings:
 * aws:elasticbeanstalk:application:environment:
 * NodeCommand: "npm start"
-* POSTGRES_USER: ''
+* POSTGRES_USERNAME: ''
 * POSTGRES_PASSWORD: ''
 * POSTGRES_HOST: ''
 * POSTGRES_DB: ''
