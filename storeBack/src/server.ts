@@ -18,11 +18,11 @@ const app = express()
 const port = config.port | 5432
 
 app.use(express.json())
-// app.use(cors())
+app.use(cors(corsOptions))
 
 app.use(express.urlencoded({ extended: true }))
 
-app.get('/', cors(corsOptions), (_req: Request, res: Response) => {
+app.get('/', (_req: Request, res: Response) => {
 	res.send('Connection OK')
 })
 
